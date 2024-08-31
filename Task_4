@@ -26,5 +26,5 @@ let monthlyPayment = calculateMortgage(loanAmount, annualInterestRate, years);
 // I output the result to the console
 console.log("Loan Amount: EUR" + loanAmount);
 console.log("Annual Interest Rate: " + annualInterestRate + "%");
-console.log("Loan Time: " + Years + " years");
-console.log("Monthly Mortgage Payment: EUR" + monthlyPayment);
+console.log("Loan Time: " + years + " years");
+console.log("Monthly Mortgage Payment: EUR" + monthlyPayment.toFixed(2)); // formatted to 2 decimal points for correctness
