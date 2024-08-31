@@ -6,165 +6,201 @@
     <title>Computer Components Order Form</title>
     <style>
         body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #0072ff, #00c6ff);
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
         }
 
-        header {
-            background-color: #5f9ea0;
-            color: #ffffff;
-            padding: 50px 20px;
+        .order-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+            border: 2px solid #00aaff;
+        }
+
+        .order-form h1 {
             text-align: center;
-            border-bottom: 5px solid #4682b4;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 28px;
+            font-size: 24px;
+            color: #0072ff;
+            margin-bottom: 20px;
             font-weight: bold;
         }
 
-        .container {
-            padding: 30px;
-            max-width: 700px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #b0c4de;
+        fieldset {
+            border: 2px solid #0072ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #e6f0ff;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        legend {
+            font-weight: bold;
+            color: #0072ff;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
-            color: #4682b4;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #b0c4de;
-            border-radius: 5px;
-            background-color: #f5faff;
-            color: #4682b4;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: #5f9ea0;
-            box-shadow: 0 0 8px rgba(95, 158, 160, 0.5);
-        }
-
-        .form-group-inline {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .form-group-inline .form-group {
-            flex: 1;
-            margin-right: 15px;
-        }
-
-        .form-group-inline .form-group:last-child {
-            margin-right: 0;
-        }
-
-        .button {
-            background-color: #5f9ea0;
-            color: #ffffff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            display: block;
-            width: 100%;
-            margin-top: 25px;
-            font-size: 16px;
+            color: #333;
             font-weight: bold;
         }
 
-        .button:hover {
-            background-color: #4682b4;
+        input, select, button {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #0072ff;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            border-color: #00c6ff;
+            outline: none;
+        }
+
+        button {
+            background: #0072ff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #005bb5;
+        }
+
+        #orderSummary {
+            display: none;
+            text-align: center;
+        }
+
+        #orderSummary h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0072ff;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Computer Components Order Form</h1>
-    </header>
 
-    <div class="container">
-        <form id="orderForm">
-            <div class="form-group">
-                <label for="customerName">Name:</label>
-                <input type="text" id="customerName" name="customerName" required>
-            </div>
-
-            <div class="form-group">
+    <div class="order-form">
+        <h1>Order Your Computer Components</h1>
+        
+        <form id="componentForm">
+            <!-- Customer Information -->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-            </div>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </fieldset>
+            
+            <!-- Component Selection -->
+            <fieldset>
+                <legend>Choose Your Components</legend>
+                
+                <label for="processor">Processor:</label>
+                <select id="processor" name="processor">
+                    <option value="i5">Intel i5</option>
+                    <option value="i7">Intel i7</option>
+                    <option value="ryzen5">AMD Ryzen 5</option>
+                    <option value="ryzen7">AMD Ryzen 7</option>
+                </select>
 
-            <div class="form-group-inline">
-                <div class="form-group">
-                    <label for="cpu">CPU:</label>
-                    <select id="cpu" name="cpu">
-                        <option value="Intel i7">Intel i7</option>
-                        <option value="AMD Ryzen 7">AMD Ryzen 7</option>
-                        <option value="Intel i5">Intel i5</option>
-                        <option value="AMD Ryzen 5">AMD Ryzen 5</option>
-                    </select>
-                </div>
+                <label for="ram">RAM:</label>
+                <select id="ram" name="ram">
+                    <option value="8gb">8 GB</option>
+                    <option value="16gb">16 GB</option>
+                    <option value="32gb">32 GB</option>
+                </select>
 
-                <div class="form-group">
-                    <label for="gpu">GPU:</label>
-                    <select id="gpu" name="gpu">
-                        <option value="NVIDIA RTX 3080">NVIDIA RTX 3080</option>
-                        <option value="NVIDIA RTX 3060">NVIDIA RTX 3060</option>
-                        <option value="AMD Radeon RX 6800">AMD Radeon RX 6800</option>
-                        <option value="AMD Radeon RX 6700">AMD Radeon RX 6700</option>
-                    </select>
-                </div>
-            </div>
+                <label for="storage">Storage:</label>
+                <select id="storage" name="storage">
+                    <option value="256gb">256 GB SSD</option>
+                    <option value="512gb">512 GB SSD</option>
+                    <option value="1tb">1 TB SSD</option>
+                </select>
 
-            <div class="form-group-inline">
-                <div class="form-group">
-                    <label for="ram">RAM:</label>
-                    <select id="ram" name="ram">
-                        <option value="16GB">16GB</option>
-                        <option value="32GB">32GB</option>
-                        <option value="64GB">64GB</option>
-                    </select>
-                </div>
+                <label for="gpu">Graphics Card:</label>
+                <select id="gpu" name="gpu">
+                    <option value="gtx1650">NVIDIA GTX 1650</option>
+                    <option value="rtx3060">NVIDIA RTX 3060</option>
+                    <option value="rtx3080">NVIDIA RTX 3080</option>
+                </select>
+            </fieldset>
 
-                <div class="form-group">
-                    <label for="storage">Storage:</label>
-                    <select id="storage" name="storage">
-                        <option value="512GB SSD">512GB SSD</option>
-                        <option value="1TB SSD">1TB SSD</option>
-                        <option value="2TB SSD">2TB SSD</option>
-                    </select>
-                </div>
-            </div>
-
-            <button type="submit" class="button">Place Order</button>
+            <!-- Submit Button -->
+            <button type="submit">Submit Order</button>
         </form>
+
+        <!-- Order Summary -->
+        <div id="orderSummary" class="hidden">
+            <h2>Your Order Summary</h2>
+            <p id="summaryText"></p>
+            <button onclick="resetForm()">Place Another Order</button>
+        </div>
     </div>
 
     <script>
-        document.getElementById("orderForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            alert("Your order has been successfully placed!");
+        document.getElementById('componentForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Gather form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const processor = document.getElementById('processor').value;
+            const ram = document.getElementById('ram').value;
+            const storage = document.getElementById('storage').value;
+            const gpu = document.getElementById('gpu').value;
+
+            // Create order summary
+            const summaryText = `
+                <strong>Name:</strong> ${name} <br>
+                <strong>Email:</strong> ${email} <br>
+                <strong>Phone:</strong> ${phone} <br>
+                <strong>Processor:</strong> ${processor} <br>
+                <strong>RAM:</strong> ${ram} <br>
+                <strong>Storage:</strong> ${storage} <br>
+                <strong>Graphics Card:</strong> ${gpu} <br>
+            `;
+            
+            document.getElementById('summaryText').innerHTML = summaryText;
+            
+            // Show summary and hide form
+            document.getElementById('componentForm').classList.add('hidden');
+            document.getElementById('orderSummary').style.display = 'block';
         });
+
+        function resetForm() {
+            // Reset form and show it again
+            document.getElementById('componentForm').reset();
+            document.getElementById('componentForm').classList.remove('hidden');
+            document.getElementById('orderSummary').style.display = 'none';
+        }
     </script>
 </body>
 </html>
