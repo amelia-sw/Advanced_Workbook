@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Components Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .order-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .order-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #orderSummary {
+            display: none;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-form">
+        <h1>Order Your Computer Components</h1>
+        
+        <form id="componentForm">
+            <!-- Customer Information -->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </fieldset>
+            
+            <!-- Component Selection -->
+            <fieldset>
+                <legend>Choose Your Components</legend>
+                
+                <label for="processor">Processor:</label>
+                <select id="processor" name="processor">
+                    <option value="i5">Intel i5</option>
+                    <option value="i7">Intel i7</option>
+                    <option value="ryzen5">AMD Ryzen 5</option>
+                    <option value="ryzen7">AMD Ryzen 7</option>
+                </select>
+
+                <label for="ram">RAM:</label>
+                <select id="ram" name="ram">
+                    <option value="8gb">8 GB</option>
+                    <option value="16gb">16 GB</option>
+                    <option value="32gb">32 GB</option>
+                </select>
+
+                <label for="storage">Storage:</label>
+                <select id="storage" name="storage">
+                    <option value="256gb">256 GB SSD</option>
+                    <option value="512gb">512 GB SSD</option>
+                    <option value="1tb">1 TB SSD</option>
+                </select>
+
+                <label for="gpu">Graphics Card:</label>
+                <select id="gpu" name="gpu">
+                    <option value="gtx1650">NVIDIA GTX 1650</option>
+                    <option value="rtx3060">NVIDIA RTX 3060</option>
+                    <option value="rtx3080">NVIDIA RTX 3080</option>
+                </select>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Order</button>
+        </form>
+
+        <!-- Order Summary -->
+        <div id="orderSummary" class="hidden">
+            <h2>Your Order Summary</h2>
+            <p id="summaryText"></p>
+            <button onclick="resetForm()">Place Another Order</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('componentForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Gather form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const processor = document.getElementById('processor').value;
+            const ram = document.getElementById('ram').value;
+            const storage = document.getElementById('storage').value;
+            const gpu = document.getElementById('gpu').value;
+
+            // Create order summary
+            const summaryText = `
+                Name: ${name} <br>
+                Email: ${email} <br>
+                Phone: ${phone} <br>
+                Processor: ${processor} <br>
+                RAM: ${ram} <br>
+                Storage: ${storage} <br>
+                Graphics Card: ${gpu} <br>
+            `;
+            
+            document.getElementById('summaryText').innerHTML = summaryText;
+            
+            // Show summary and hide form
+            document.getElementById('componentForm').classList.add('hidden');
+            document.getElementById('orderSummary').style.display = 'block';
+        });
+
+        function resetForm() {
+            // Reset form and show it again
+            document.getElementById('componentForm').reset();
+            document.getElementById('componentForm').classList.remove('hidden');
+            document.getElementById('orderSummary').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
