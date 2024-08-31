@@ -17,8 +17,8 @@ function calculateMortgage(loanAmount, annualInterestRate, years) {
 // Below I will use random data for loan amount, annual interest rate, years
 
 let loanAmount = 1000000;        // (EUR)
-let annualInterestRate = 5;           //  (%)
-let years = 30;              // (years)
+let annualInterestRate = 5;     //  (%)
+let years = 30;                // (years)
 
 // I calculate the monthly mortgage payment
 let monthlyPayment = calculateMortgage(loanAmount, annualInterestRate, years);
