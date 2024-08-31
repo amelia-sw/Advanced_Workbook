@@ -14,7 +14,7 @@ function calculateMortgage(loanAmount, annualInterestRate, years) {
     return monthlyPayment;  // Monthly payment is returned
 }
 
-// Below I will use random data for loan amount, annual interest rate, years
+// Below I will use random data for a loan amount, annual interest rate, and years
 
 let loanAmount = 1000000;        // (EUR)
 let annualInterestRate = 5;     //  (%)
@@ -23,19 +23,8 @@ let years = 30;                // (years)
 // I calculate the monthly mortgage payment
 let monthlyPayment = calculateMortgage(loanAmount, annualInterestRate, years);
 
-// Output the result to the console
-console.log("Loan Amount: $" + loanAmount);
-console.log("Annual Interest Rate: " + interestRate + "%");
-console.log("Loan Term: " + loanTerm + " years");
-console.log("Monthly Mortgage Payment: $" + monthlyPayment);
-
-// Additional Function: Display the total payment over the loan term
-function totalPayment(monthlyPayment, years) {
-    // Calculate the total payment by multiplying the monthly payment by the total number of payments
-    let total = (monthlyPayment * years * 12).toFixed(2);
-    return total;
-}
-
-// Calculate and display the total payment over the loan term
-let total = totalPayment(monthlyPayment, loanTerm);
-console.log("Total Payment over " + loanTerm + " years: $" + total);
+// I output the result to the console
+console.log("Loan Amount: EUR" + loanAmount);
+console.log("Annual Interest Rate: " + annualInterestRate + "%");
+console.log("Loan Time: " + Years + " years");
+console.log("Monthly Mortgage Payment: EUR" + monthlyPayment);
