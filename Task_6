@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Computer Components Order Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 5;
+            margin: 0;
             padding: 0;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            padding: 40px 20px; /* Added 40px padding to the top */
+            padding: 20px; /* Added 40px padding to the top */
             text-align: center;
         }
 
