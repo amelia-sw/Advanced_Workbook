@@ -1,9 +1,13 @@
-function calculateMortgage(loanAmount, annualInterestRate, years) {        // I started by creating a function that calculates monthly mortgage payment
+// I started by creating a function that calculates monthly mortgage payment
+function calculateMortgage(loanAmount, annualInterestRate, years) {       
 
-    let monthlyInterestRate = annualInterestRate / 100 / 12;             // I converted the annual interest rate to a monthly interest rate - 12 for months and 100 for decimal
-    let numberOfPayments = years * 12;                                  // I calculated the total number of months (which equals to the total number of payments)
+// I converted the annual interest rate to a monthly interest rate - 12 for months and 100 for decimal
+    let monthlyInterestRate = annualInterestRate / 100 / 12;   
 
-    // I used the following formula found on the internet for calculating monthly payments
+// I calculated the total number of months (which equals to the total number of payments)
+    let numberOfPayments = years * 12;                                  
+
+// I used the following formula found on the internet for calculating monthly payments
     let monthlyPayment = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) /
                          (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
 
@@ -11,12 +15,13 @@ function calculateMortgage(loanAmount, annualInterestRate, years) {        // I 
 }
 
 // Below I will use random data for loan amount, annual interest rate, years
-let loanAmount = 200000;        // Principal amount ($)
-let interestRate = 5;           // Annual interest rate (%)
-let loanTerm = 30;              // Loan term (years)
 
-// Calculate the monthly mortgage payment
-let monthlyPayment = calculateMortgage(loanAmount, interestRate, loanTerm);
+let loanAmount = 1000000;        // (EUR)
+let annualInterestRate = 5;           //  (%)
+let years = 30;              // (years)
+
+// I calculate the monthly mortgage payment
+let monthlyPayment = calculateMortgage(loanAmount, annualInterestRate, years);
 
 // Output the result to the console
 console.log("Loan Amount: $" + loanAmount);
