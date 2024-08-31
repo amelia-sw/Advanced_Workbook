@@ -16,15 +16,15 @@ function calculateMortgage(loanAmount, annualInterestRate, years) {
 
 // Below I will use random data for a loan amount, annual interest rate, and years
 
-let loanAmount = 1000000;        // (EUR)
-let annualInterestRate = 5;     //  (%)
-let years = 30;                // (years)
+let loanSum = 1000000;        // (EUR)
+let interestRate = 5;     //  (%)
+let loanPeriod = 30;                // (years)
 
 // I calculate the monthly mortgage payment
-let monthlyPayment = calculateMortgage(loanAmount, annualInterestRate, years);
+let monthlyPayment = calculateMortgage(loanSum, interestRate, loanPeriod);
 
 // I output the result to the console
-console.log("Your Loan Amount is: EUR" + loanAmount);
-console.log("Your Annual Interest Rate is: " + annualInterestRate + "%");
-console.log("Your Loan Time is: " + years + " years");
+console.log("Your Loan Amount is: EUR" + loanSum);
+console.log("Your Annual Interest Rate is: " + interestRate + "%");
+console.log("Your Loan Time is: " + loanPeriod + " years");
 console.log("Your Monthly Mortgage Payment is: EUR" + monthlyPayment.toFixed(2)); // formatted to 2 decimal points for correctness
