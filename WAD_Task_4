@@ -1,0 +1,38 @@
+function calculateMortgage(loanAmount, annualInterestRate, years) {        // I started by creating a function that calculates monthly mortgage payment
+
+    let monthlyInterestRate = annualInterestRate / 100 / 12;             // I converted the annual interest rate to a monthly interest rate - 12 for months and 100 for decimal
+    let numberOfPayments = years * 12;                                  // I calculated the total number of months (which equals to the total number of payments)
+    
+    // I used the following formula found on the internet for calculating monthly payments
+    let monthlyPayment = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) /
+                         (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+    
+    return monthlyPayment;  // The function returns the monthly payment
+}
+
+// Example usage:
+
+// Define the loan amount (principal), annual interest rate, and loan term
+let loanAmount = 200000;        // Principal amount ($)
+let interestRate = 5;           // Annual interest rate (%)
+let loanTerm = 30;              // Loan term (years)
+
+// Calculate the monthly mortgage payment
+let monthlyPayment = calculateMortgage(loanAmount, interestRate, loanTerm);
+
+// Output the result to the console
+console.log("Loan Amount: $" + loanAmount);
+console.log("Annual Interest Rate: " + interestRate + "%");
+console.log("Loan Term: " + loanTerm + " years");
+console.log("Monthly Mortgage Payment: $" + monthlyPayment);
+
+// Additional Function: Display the total payment over the loan term
+function totalPayment(monthlyPayment, years) {
+    // Calculate the total payment by multiplying the monthly payment by the total number of payments
+    let total = (monthlyPayment * years * 12).toFixed(2);
+    return total;
+}
+
+// Calculate and display the total payment over the loan term
+let total = totalPayment(monthlyPayment, loanTerm);
+console.log("Total Payment over " + loanTerm + " years: $" + total);
