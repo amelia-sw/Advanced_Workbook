@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Specify the character encoding for the document -->
+    <!-- Here I specified the character encoding used in my project -->
     <meta charset="UTF-8">
-    <!-- Set the viewport width to device-width and initial scale to 1 for responsive design -->
+    <!-- I set the viewport width to device-width and initial scale to 1 for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the webpage that appears on the browser tab -->
+    <!-- I created a web page title -->
     <title>Computer Components Order Form 🖥️</title>
     <style>
-        /* Basic styles for the body of the page */
+        /* Here are basic styles I chose for the body in CSS */
         body {
-            font-family: Arial, sans-serif; /* Set the font for the body */
-            background: linear-gradient(to right, #f6c6c6, #f2e5f8); /* Gradient background color */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            display: flex; /* Use flexbox layout */
-            justify-content: center; /* Center content horizontally */
-            align-items: center; /* Center content vertically */
-            height: 100vh; /* Full viewport height */
-            color: #333; /* Dark gray text color */
+            font-family: Arial, sans-serif; /* I set the font */
+            background: linear-gradient(to right, #f6c6c6, #f2e5f8); /* I set gradient background color */
+            margin: 0; /* I removed default margin */
+            padding: 0; /* I removed default padding */
+            display: flex; /* I used flexbox layout */
+            justify-content: center; /* I centered content horizontally */
+            align-items: center; /* I centered content vertically */
+            height: 100vh; /* I set full viewport height */
+            color: #333; /* I set dark gray text color */
         }
 
-        /* Styles for the main form container */
+        /* Here are styles for the main form block */
         .order-form {
-            background: #fff; /* White background for the form */
-            padding: 20px; /* Padding inside the form */
-            border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for a lifted effect */
-            width: 90%; /* Width of the form relative to its container */
-            max-width: 1000px; /* Maximum width of the form */
-            display: flex; /* Use flexbox layout for children */
-            flex-direction: row; /* Arrange children in a row */
-            gap: 20px; /* Space between form sections */
-            border: 2px solid #d6a4a4; /* Border color and width */
+            background: #fff; /* I set white background */
+            padding: 20px; /* I set padding inside the form */
+            border-radius: 12px; /* I rounded the corners */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* I set shadow for a lifted effect */
+            width: 90%; /* I set width of the form relative to the block */
+            max-width: 1000px; /* I set maximum width of the form */
+            display: flex; /* I used flexbox layout for children */
+            flex-direction: row; /* I arranged children in a row */
+            gap: 20px; /* I set space between form sections */
+            border: 2px solid #d6a4a4; /* I set border color and width */
         }
 
-        /* Styles for the heading of the form */
+        /* Here are styles for the heading */
         .order-form h1 {
-            text-align: center; /* Center the heading text */
-            font-size: 28px; /* Font size for the heading */
-            color: #f06c6c; /* Light red color for the text */
-            margin-bottom: 20px; /* Space below the heading */
-            font-weight: 700; /* Bold font weight */
+            text-align: center; /* I centered the heading text */
+            font-size: 28px; /* I set font size for the heading */
+            color: #f06c6c; /* I used light red color for the text */
+            margin-bottom: 20px; /* I created space below the heading */
+            font-weight: 700; /* I set bold font weight */
         }
 
-        /* Styles for each section of the form */
+        /* Here are styles for the sections */
         .form-section {
-            flex: 1; /* Allow the section to grow and fill available space */
-            padding: 15px; /* Padding inside the section */
-            border: 1px solid #f06c6c; /* Border color and width */
-            border-radius: 8px; /* Rounded corners */
-            background-color: #fef5f5; /* Light pink background color */
+            flex: 1; /* I let section grow and fill available space */
+            padding: 15px; /* I pur padding inside the section */
+            border: 1px solid #f06c6c; /* I set border color and width */
+            border-radius: 8px; /* I rounded the corners */
+            background-color: #fef5f5; /* I created light pink background */
         }
 
-        /* Styles for the fieldset legend (section title) */
+        /* Here are styles for the section title */
         .form-section legend {
-            font-weight: bold; /* Bold font weight */
-            color: #f06c6c; /* Light red color for the text */
+            font-weight: bold; /* I set bold font weight */
+            color: #f06c6c; /* I set light red color for the text */
         }
 
-        /* Styles for labels within the form */
+        /* Here are styles for labels in the form */
         label {
-            display: block; /* Display labels as block elements */
-            margin-bottom: 8px; /* Space below each label */
-            color: #555; /* Dark gray color for the text */
-            font-weight: bold; /* Bold font weight */
+            display: block; /* I displayed labels as block elements */
+            margin-bottom: 8px; /* I put space below labels */
+            color: #555; /* I chose dark gray color for the text */
+            font-weight: bold; /* I set bold font weight */
         }
 
-        /* Styles for form inputs, selects, and buttons */
+        /* Here are styles for form inputs, selects, and buttons */
         input, select, button {
-            width: calc(100% - 24px); /* Full width minus padding */
-            padding: 12px; /* Padding inside inputs, selects, and buttons */
-            margin-bottom: 15px; /* Space below each input, select, and button */
-            border: 2px solid #f06c6c; /* Border color and width */
-            border-radius: 6px; /* Rounded corners */
-            font-size: 16px; /* Font size */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            background-color: #fff; /* White background color */
+            width: calc(100% - 24px); /* I set full width minus padding */
+            padding: 12px; /*  I set padding inside inputs, selects, and buttons */
+            margin-bottom: 15px; /* I put space below each input, select, and button */
+            border: 2px solid #f06c6c; /* I set border color and width */
+            border-radius: 6px; /* I rounded the corners */
+            font-size: 16px; /* I set the font size */
+            box-sizing: border-box; /* I included padding and border in the total width and height */
+            background-color: #fff; /* I set white background color */
         }
 
-        /* Styles for input and select elements when focused */
+        /* Here are styles for input and select elements when focused */
         input:focus, select:focus {
             border-color: #f4a6a6; /* Change border color on focus */
             outline: none; /* Remove default focus outline */
