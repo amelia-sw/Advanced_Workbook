@@ -118,21 +118,18 @@
             color: #fff; /* I set white text color */
             cursor: pointer; /* I set the cursor to change to pointer on hover */
             display: inline-block; /* I set the button to fit to the text width */
-         
         }
-
-   
     </style>
 </head>
-<body>
 
+<body>
     <div class="order-form" id="orderFormContainer">
-        <!-- Form container with two sections -->
+        <!-- I created form block with two sections -->
         <div class="form-section">
             <h1>Order Your Computer Components 🖥️</h1>
             
             <form id="componentForm">
-                <!-- Section for customer information -->
+                <!-- I created a section for customer info -->
                 <fieldset>
                     <legend>Customer Information</legend>
                     <label for="name">Name:</label>
@@ -146,13 +143,13 @@
                 </fieldset>
         </div>
         <div class="form-section">
-                <!-- Section for component selection -->
+                <!-- I created a section for component selection -->
                 <fieldset>
                     <legend>Choose Your Components</legend>
                     
                     <label for="processor">Processor:</label>
                     <select id="processor" name="processor">
-                        <!-- Options for processors -->
+                        <!-- I set options to choose for processors -->
                         <option value="athlon">AMD Athlon 3000G</option>
                         <option value="ryzen3">AMD Ryzen 3 3200G</option>
                         <option value="i3">Intel Core i3-12100</option>
@@ -163,7 +160,7 @@
 
                     <label for="ram">RAM:</label>
                     <select id="ram" name="ram">
-                        <!-- Options for RAM -->
+                        <!-- I set options to choose for RAM -->
                         <option value="8gb">8 GB</option>
                         <option value="16gb">16 GB</option>
                         <option value="32gb">32 GB</option>
@@ -171,7 +168,7 @@
 
                     <label for="storage">Storage:</label>
                     <select id="storage" name="storage">
-                        <!-- Options for storage -->
+                        <!-- I set options to choose for storage -->
                         <option value="256gb">256 GB SSD</option>
                         <option value="512gb">512 GB SSD</option>
                         <option value="1tb">1 TB SSD</option>
@@ -179,7 +176,7 @@
 
                     <label for="gpu">Graphics Card:</label>
                     <select id="gpu" name="gpu">
-                        <!-- Options for graphics cards -->
+                        <!-- I set options to choose for graphics cards -->
                         <option value="rx550">AMD Radeon RX 550</option>
                         <option value="rx580">AMD Radeon RX 580</option>
                         <option value="gtx1060">NVIDIA GeForce GTX 1060</option>
@@ -189,26 +186,26 @@
                     </select>
                 </fieldset>
 
-                <!-- Submit button for the form -->
+                <!-- I created a submit button for the form -->
                 <button type="submit">Submit Order</button>
             </form>
         </div>
     </div>
 
-    <!-- Section to display the order summary -->
+    <!-- I created a section for the order summary -->
     <div id="orderSummary" class="hidden">
         <h2>Your Order Summary</h2>
         <p id="summaryText"></p>
-        <!-- Button to place another order -->
+        <!-- I created a button to place a new order -->
         <button class="small-button" onclick="resetForm()">Place Another Order</button>
     </div>
 
     <script>
-        // Event listener for form submission
+        // I created an event listener for the form submission
         document.getElementById('componentForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent default form submission behavior
 
-            // Gather form data
+            // Here form data is gathered
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
@@ -217,7 +214,7 @@
             const storage = document.getElementById('storage').value;
             const gpu = document.getElementById('gpu').value;
 
-            // Create order summary text
+            // Here I created the order summary text
             const summaryText = `
                 <strong>Name:</strong> ${name} <br>
                 <strong>Email:</strong> ${email} <br>
@@ -228,21 +225,21 @@
                 <strong>Graphics Card:</strong> ${gpu} <br>
             `;
             
-            // Update the order summary section with the created summary text
+            // Here I updated the order summary section with the created summary text
             document.getElementById('summaryText').innerHTML = summaryText;
             
-            // Hide the form container and show the order summary
+            // Here I set to hide the form container and show the order summary
             document.getElementById('orderFormContainer').style.display = 'none';
             document.getElementById('orderSummary').style.display = 'block';
         });
 
-        // Function to reset the form and display it again
+        // Here I included a function to reset the form and display it again
         function resetForm() {
-            // Reset the form fields
+            // This resets the form fields
             document.getElementById('componentForm').reset();
-            // Show the form container
+            // This shows the form block
             document.getElementById('orderFormContainer').style.display = 'flex';
-            // Hide the order summary section
+            // This hides the order summary section
             document.getElementById('orderSummary').style.display = 'none';
         }
     </script>
