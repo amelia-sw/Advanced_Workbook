@@ -3,12 +3,12 @@
 <head>
     <!-- Here I specified the character encoding used in my project -->
     <meta charset="UTF-8">
-    <!-- I set the viewport width to device-width and initial scale to 1 for responsive design -->
+    <!-- I set the viewport width and initial scale to 1 for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- I created a web page title -->
     <title>Computer Components Order Form 🖥️</title>
     <style>
-        /* Here are basic styles I chose for the body in CSS */
+        /* Here are basic styles I chose for the body */
         body {
             font-family: Arial, sans-serif; /* I set the font */
             background: linear-gradient(to right, #f6c6c6, #f2e5f8); /* I set gradient background color */
