@@ -78,17 +78,16 @@
             box-sizing: border-box; /* I included padding and border in the total width and height */
             background-color: #fff; /* I set white background color */
         }
-
        
-        /* Styles for the submit button */
+        /* Here are styles for the submit button */
         button {
-            background: #f06c6c; /* Light red background color */
-            color: #fff; /* White text color */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            border: none; /* Remove default border */
-            font-size: 18px; /* Font size */
-            font-weight: bold; /* Bold font weight */
-            margin-top: 30px; /* Space above the button */
+            background: #f06c6c; /* I set background color */
+            color: #fff; /* I set white text color */
+            cursor: pointer; /* I set cursor to change to pointer on hover */
+            border: none; /* I removed default border */
+            font-size: 18px; /* I set font size */
+            font-weight: bold; /* I set bold font weight */
+            margin-top: 30px; /* I created space above the button */
             transition: background 0.3s ease; /* Smooth background color transition on hover */
         }
 
